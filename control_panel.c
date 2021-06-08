@@ -24,8 +24,11 @@ int main()
         }
         else if (strstr(menu_choice, "2"))
         {
-            screen(40, 205, "Enter account id", 13, 16);
+            screen(40, 205, "Enter account id", 8, 16);
             scanf("%s", temp_str);
+
+            screen(40, 205, "Enter password id", 8, 16);
+            scanf("%s", temp_str3);
 
             screen(40, 205, "As admin or user?", 8, 18);
             scanf("%s", temp_str2);
@@ -33,8 +36,8 @@ int main()
             if (strstr(temp_str, "q")) {  }
             else
             { 
-                if (strstr(temp_str2, "user")) { delete_account(temp_str, 1); }
-                else if (strstr(temp_str2, "admin")) { delete_account(temp_str, 2); }
+                if (strstr(temp_str2, "user")) { delete_account(temp_str, temp_str3,1); }
+                else if (strstr(temp_str2, "admin")) { delete_account(temp_str, temp_str3, 2); }
             }
         }
         else if (strstr(menu_choice, "3"))
