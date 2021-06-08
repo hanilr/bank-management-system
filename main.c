@@ -75,7 +75,7 @@ int main()
                 scanf("%s", temp_str);
 
                 if (strstr(temp_str, "q")) {  }
-                else { delete_account(id, 1); }
+                else { delete_account(id, pass, 1); }
                 break;
             }
         }
