@@ -104,12 +104,30 @@ void create_account(char create_pass[8])
     screen(40, 205, temp_id, 4, 0);
 }
 
-void delete_account(char delete_id[16], int as_what)
+void delete_account(char delete_id[16], char delete_pass[8], int as_what)
 {
-    if (as_what == 1){ write_log(delete_id, "The Account Has Been Deleted"); }
+    char dir_path[64] = "data/";
+
+    strcat(dir_path, delete_id);
+    strcat(dir_path, "/");
+    strcat(dir_path, delete_pass);
+    strcat(dir_path, ".txt");
+
+    if (as_what == 1)
+    { 
+        remove(dir_path);
+        write_log(delete_id, "The Account Has Been Deleted");
+    }
     else
     {
-        char id_folder[32] = "cd data && rmdir /s /q ";
+        #ifdef _WIN32
+            char id_folder[32] = "cd data && rmdir /s /q ";
+        #endif
+
+        #ifdef __linux__
+        char id_folder[32] = "cd data && rm -rf ";
+        #endif
+
         strcat(id_folder, delete_id);
         system(id_folder);
     }
