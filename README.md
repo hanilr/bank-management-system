@@ -51,6 +51,6 @@ For admins: ` ./control_panel `
 # Usage
 If you type "create" in id screen then you can create new account. So you will receive your id, so please note it.
 
-User commands: 'deposit()', 'withdraw()', 'change_pass()', 'delete_account()' and 'create_account()'
+User commands: ` deposit() ` ` withdraw() ` ` change_pass() ` ` delete_account() ` ` create_account() `
 
-Admin commands: 'create_account()', 'delete_account()', 'change_password()' and 'ban_account()'
+Admin commands: ` create_account() ` ` delete_account() ` ` change_password() ` ` ban_account() `
