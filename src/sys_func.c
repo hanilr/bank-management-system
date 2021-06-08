@@ -4,6 +4,7 @@
 #include <time.h>
 
 #include "sys_func.h"
+#include "ui.h"
 
 char bank_id[16], bank_pass[8];
 
@@ -100,6 +101,7 @@ void create_account(char create_pass[8])
 
     set_pass(temp_id, create_pass);
     create_log(temp_id);
+    screen(40, 205, temp_id, 4, 0);
 }
 
 void delete_account(char delete_id[16], int as_what)
