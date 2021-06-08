@@ -3,6 +3,7 @@ Bank management system writtetn in c
 
 * [About The Project](#about-the-project)
 * [Compile And Running](#compile-and-running)
+* [Usage](#usage)
 
 # About The Project
 When I researched about bank management on Github I didn't see a good enough source code and I made this project just to see how well I could do it. The project generally uses 'stdlib.h', 'stdio.h' and 'string.h' libraries in the c language, and the system structure is entirely using file layout. Written to be used with servers. Please indicate in the "issues" section if you encounter any errors or problems.
@@ -46,3 +47,10 @@ For admins: ` control_panel.exe `
 For users: ` ./main ` 
 
 For admins: ` ./control_panel `
+
+# Usage
+If you type "create" in id screen then you can create new account. So you will receive your id, so please note it.
+
+User commands: 'deposit()', 'withdraw()', 'change_pass()', 'delete_account()' and 'create_account()'
+
+Admin commands: 'create_account()', 'delete_account()', 'change_password()' and 'ban_account()'
