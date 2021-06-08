@@ -20,7 +20,7 @@ void fetch_balance(char id[16], char pass[8]); // Fetch User Money In Password "
 // Account System //
 void create_account(char create_pass[8]); // Create New Account In "data" Folder
 
-void delete_account(char delete_id[16], int as_what); // Delete An Account Inside Of "data/<id>"
+void delete_account(char delete_id[16], char delete_pass[8], int as_what); // Delete An Account Inside Of "data/<id>"
 
 void ban_account(char ban_id[16]); // Ban Specific User And Write Inside Of "log.txt"
 // ============== //
