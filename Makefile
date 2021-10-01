@@ -1,37 +1,32 @@
+# ------------------------------- #
+# BANK MANAGEMENT SYSTEM MAKEFILE #
+# ------------------------------- #
+
+CC= gcc
+ui= lib/ui.c
+file= lib/sys/file.c
+
+client= src/client.c
+admin= src/admin.c
+
+.PHONY: run clean
+
 ifeq ($(OS),Windows_NT)
 
-.PHONY: run clear main control_panel
+run: $(admin) $(client) $(file) $(ui)
+	$(CC) $(admin) $(file) $(ui) -o admin.exe
+	$(CC) $(client) $(file) $(ui) -o client.exe
 
-run: 
-	gcc main.c src/sys_func.c src/ui.c -o main.exe
-	gcc control_panel.c src/sys_func.c src/ui.c -o control_panel.exe
-
-clear:
-	del main.exe
-	del control_panel.exe
-
-main:
-	gcc main.c src/sys_func.c src/ui.c -o main.exe
-
-control_panel:
-	gcc control_panel.c src/sys_func.c src/ui.c -o control_panel.exe
+clean: admin client
+	del *.exe
 
 else
 
-.PHONY: run clear main control_panel
+run: $(admin) $(client) $(file) $(ui)
+	$(CC) $(admin) $(file) $(ui) -o admin
+	$(CC) $(client) $(file) $(ui) -o client
 
-run: 
-	gcc main.c src/sys_func.c src/ui.c -o main
-	gcc control_panel.c src/sys_func.c src/ui.c -o control_panel
+clean: admin client
+	rm admin client
 
-clear:
-	rm main
-	rm control_panel
-
-main:
-	gcc main.c src/sys_func.c src/ui.c -o main
-
-control_panel:
-	gcc control_panel.c src/sys_func.c src/ui.c -o control_panel
-	
-endif
+endif # MADE BY @hanilr #
